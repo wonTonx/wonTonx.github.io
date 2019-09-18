@@ -94,19 +94,17 @@
 
 
 
-<meta name="description" content="问： 电脑怎么完成四则远算？答：用两个栈来完成，一个栈存要运算得数字，另一个存运算符，当遇到数字时入栈，遇到运算符时，比较栈顶元素运算符和要入栈得运算符的优先级, 当入栈运算符优先级高时直接入栈，当入栈运算符低或者相同时，取出栈顶运算符，同时在存放数字的栈的栈顶取两个元素，用改运算符运算，数字栈存放运算后的结果，然后再继续比较。感想：以前就知道栈能做浏览器的前进后退，原来这么基础的计算在电脑的表述">
+<meta name="description" content="跟垃圾回收有关 但绝不是用来处理垃圾回收的方法；具体应该是不太常用到的方法吧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="研究栈">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/研究栈/index.html">
+<meta property="og:title" content="能不能搞懂finalize">
+<meta property="og:url" content="http://yoursite.com/2019/09/12/能不能搞懂finalize/index.html">
 <meta property="og:site_name" content="大大粒云吞">
-<meta property="og:description" content="问： 电脑怎么完成四则远算？答：用两个栈来完成，一个栈存要运算得数字，另一个存运算符，当遇到数字时入栈，遇到运算符时，比较栈顶元素运算符和要入栈得运算符的优先级, 当入栈运算符优先级高时直接入栈，当入栈运算符低或者相同时，取出栈顶运算符，同时在存放数字的栈的栈顶取两个元素，用改运算符运算，数字栈存放运算后的结果，然后再继续比较。感想：以前就知道栈能做浏览器的前进后退，原来这么基础的计算在电脑的表述">
+<meta property="og:description" content="跟垃圾回收有关 但绝不是用来处理垃圾回收的方法；具体应该是不太常用到的方法吧">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://static001.geekbang.org/resource/image/bc/00/bc77c8d33375750f1700eb7778551600.jpg">
-<meta property="og:updated_time" content="2019-08-05T13:38:18.611Z">
+<meta property="og:updated_time" content="2019-09-12T13:35:33.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="研究栈">
-<meta name="twitter:description" content="问： 电脑怎么完成四则远算？答：用两个栈来完成，一个栈存要运算得数字，另一个存运算符，当遇到数字时入栈，遇到运算符时，比较栈顶元素运算符和要入栈得运算符的优先级, 当入栈运算符优先级高时直接入栈，当入栈运算符低或者相同时，取出栈顶运算符，同时在存放数字的栈的栈顶取两个元素，用改运算符运算，数字栈存放运算后的结果，然后再继续比较。感想：以前就知道栈能做浏览器的前进后退，原来这么基础的计算在电脑的表述">
-<meta name="twitter:image" content="https://static001.geekbang.org/resource/image/bc/00/bc77c8d33375750f1700eb7778551600.jpg">
+<meta name="twitter:title" content="能不能搞懂finalize">
+<meta name="twitter:description" content="跟垃圾回收有关 但绝不是用来处理垃圾回收的方法；具体应该是不太常用到的方法吧">
 
 
 
@@ -135,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/05/研究栈/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/12/能不能搞懂finalize/"/>
 
 
 
 
 
-  <title>研究栈 | 大大粒云吞</title>
+  <title>能不能搞懂finalize | 大大粒云吞</title>
   
 
 
@@ -264,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/研究栈/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂finalize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -281,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">研究栈</h1>
+          <h1 class="post-title" itemprop="name headline">能不能搞懂finalize</h1>
         
 
         <div class="post-meta">
@@ -293,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T21:27:14+08:00">
-                2019-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T20:58:11+08:00">
+                2019-09-12
               </time>
             
 
@@ -331,7 +329,7 @@
       
 
       
-        <p>问： 电脑怎么完成四则远算？<br>答：用两个栈来完成，一个栈存要运算得数字，另一个存运算符，当遇到数字时入栈，遇到运算符时，比较栈顶元素运算符和要入栈得运算符的优先级, 当入栈运算符优先级高时直接入栈，当入栈运算符低或者相同时，取出栈顶运算符，同时在存放数字的栈的栈顶取两个元素，用改运算符运算，数字栈存放运算后的结果，然后再继续比较。<br><img src="https://static001.geekbang.org/resource/image/bc/00/bc77c8d33375750f1700eb7778551600.jpg" alt="avatar"><br>感想：以前就知道栈能做浏览器的前进后退，原来这么基础的计算在电脑的表述下是需要用到栈的结构来实现的。</p>
+        <p>跟垃圾回收有关 但绝不是用来处理垃圾回收的方法；具体应该是不太常用到的方法吧</p>
 
       
     </div>
@@ -356,8 +354,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/15/new-HelloWorld/" rel="next" title="new HelloWorld">
-                <i class="fa fa-chevron-left"></i> new HelloWorld
+              <a href="/2019/09/12/能不能搞懂finally/" rel="next" title="能不能搞懂finally">
+                <i class="fa fa-chevron-left"></i> 能不能搞懂finally
               </a>
             
           </div>
@@ -366,8 +364,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/13/研究leetcode-141-Linked-List-Cycle/" rel="prev" title="研究leetcode 141. Linked List Cycle">
-                研究leetcode 141. Linked List Cycle <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/12/能不能搞懂Java四大引用/" rel="prev" title="能不能搞懂Java四大引用">
+                能不能搞懂Java四大引用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

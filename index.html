@@ -260,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/leetcode-NO-136/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/能不能搞懂关键字this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -279,7 +279,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/26/leetcode-NO-136/" itemprop="url">leetcode_NO.136</a></h1>
+                <a class="post-title-link" href="/2019/09/17/能不能搞懂关键字this/" itemprop="url">能不能搞懂关键字this</a></h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T19:05:19+08:00">
-                2019-08-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-17T12:46:59+08:00">
+                2019-09-17
               </time>
             
 
@@ -331,11 +331,7 @@
       
         
           
-            <p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.</p>
-<p>Note:</p>
-<p>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
-<p>思路一很容易想到的：<br>就是用一个HashMap存入数组里的数，当HashMap里不存在该数的时候就存入，如果有就删除，这个遍历完整个数组后，依照题目的条件HashMap里只会存在一个元素，最后将它取出返回<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] ints)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(ints[i])) &#123;</span><br><span class="line">                map.remove(ints[i]);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                map.put(ints[i],ints[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer,Integer&gt; entry: map.entrySet()) &#123;</span><br><span class="line">            <span class="keyword">int</span> res = entry.getKey();</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>思路二使用位运算<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">singleNumber2</span><span class="params">(<span class="keyword">int</span>[] ints)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            res ^= ints[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+            <p>this只能在方法内部使用，表示调用方法的那个对象的引用；<br>编译器会把调用对象的引用作为第一个参数传递到方法内，我们写代码是看不到的；<br>使用场景：<br>1在一个构造器调用另一个构造器，在Android里的很多类有多个构造方法都是这样写的<br>2区分参数与类的成员变量</p>
 
           
         
@@ -384,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/研究leetcode-141-Linked-List-Cycle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/Android基础：启动模式各种栗子/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -403,7 +399,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/13/研究leetcode-141-Linked-List-Cycle/" itemprop="url">研究leetcode 141. Linked List Cycle</a></h1>
+                <a class="post-title-link" href="/2019/09/15/Android基础：启动模式各种栗子/" itemprop="url">Android基础：启动模式各种栗子</a></h1>
         
 
         <div class="post-meta">
@@ -415,8 +411,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T01:19:10+08:00">
-                2019-08-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T20:29:02+08:00">
+                2019-09-15
               </time>
             
 
@@ -455,8 +451,12 @@
       
         
           
-            <p>判断一个链表里是否有环；<br>1.正常思路就是遍历一遍链表，有一个Set将遍历的元素一个一个存起来，用来跟下一个元素作比较，如果有相等就是有环，全部遍历完都没有相等的 那么就是没有环；这个时间复杂度是O(n),空间是O(n);<br>代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        Set&lt;ListNode&gt; seen = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">null</span> != head) &#123;</span><br><span class="line">            <span class="keyword">if</span> (seen.contains(head)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                seen.add(head);</span><br><span class="line">            &#125;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2.就是用快慢指针，快指针每次移动两格，慢指针一次移动一格，如果是有环的情况下两个指针总会相遇，就是fast==slow，没有环的情况下快指针会优先指向空<br>代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == head || <span class="keyword">null</span> == head.next)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head.next;</span><br><span class="line">        <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> == fast || fast.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>又来了首先是四中模式的名词：standard、singleTop、singleTask、singleInstance</p>
+<p>standard-&gt;<br>标准模式</p>
+<p>singleTop-&gt;<br>栈顶复用模式：就是如果Activity已经存在栈顶，它不会被重新创建就是onCreate()方法不会被重新调用了，会调用onNewIntent()方法；如果不在栈顶就表现跟standard一样，</p>
+<p>singleTask-&gt;<br>栈内复用模式：如果Activity已经存在栈内，那么就把压在它上面的所有Activity都出栈，它变栈顶，也是不会被重新创建，也会调用onNewIntent()方法</p>
+<p>singleInstance-&gt;<br>自己独自占有一个返回栈,多个应用共享这一个应用，也会调用onNewIntent()</p>
+<p>感觉上他们的复用的强度就是这样的：singleInstance&gt;singleTask&gt;singleTop&gt;standard</p>
 
           
         
@@ -505,7 +505,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/研究栈/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/Android基础：Activity生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -524,7 +524,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/05/研究栈/" itemprop="url">研究栈</a></h1>
+                <a class="post-title-link" href="/2019/09/15/Android基础：Activity生命周期/" itemprop="url">Android基础：Activity生命周期</a></h1>
         
 
         <div class="post-meta">
@@ -536,8 +536,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T21:27:14+08:00">
-                2019-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T20:06:26+08:00">
+                2019-09-15
               </time>
             
 
@@ -576,7 +576,9 @@
       
         
           
-            <p>问： 电脑怎么完成四则远算？<br>答：用两个栈来完成，一个栈存要运算得数字，另一个存运算符，当遇到数字时入栈，遇到运算符时，比较栈顶元素运算符和要入栈得运算符的优先级, 当入栈运算符优先级高时直接入栈，当入栈运算符低或者相同时，取出栈顶运算符，同时在存放数字的栈的栈顶取两个元素，用改运算符运算，数字栈存放运算后的结果，然后再继续比较。<br><img src="https://static001.geekbang.org/resource/image/bc/00/bc77c8d33375750f1700eb7778551600.jpg" alt="avatar"><br>感想：以前就知道栈能做浏览器的前进后退，原来这么基础的计算在电脑的表述下是需要用到栈的结构来实现的。</p>
+            <p>好一上来就是有哪些啦： onCreate()、onStart()、onResume、onPause()、onStop()、onDestory()、onRestart();</p>
+<p>onCreate() -&gt; 第一次创建的时候被调用，在方法里初始化对象如布局加载 还有绑定事件<br>onStart()-&gt;由不可见变为可见的时候调用<br>onResume()-&gt;切换到前台，可以和用户交互时调用，此时活动一定处于返回栈的栈顶，并处于运行状态；<br>onPause()-&gt;在系统准备去启动或者恢复另一个Activity的时候调用，通常会将一些极其消耗CPU的资源释放掉，以及保存一些关键数据；但这些操作要快不然影响新的栈顶Activity<br>onStop()-&gt;在Activity完全不可见时调用；<br>onDestory()-&gt;在Activity即将销毁之前调用，之后Activity会变为销毁状态<br>onRestart()-&gt;在Activity由停止状态变为运行状态之前调用</p>
+<p>一对一对的话就是onCreate()和onStop()是完整生存期，onResume()和onPause()是前台生存期，onStart()和onStop是可见生产期</p>
 
           
         
@@ -625,7 +627,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/new-HelloWorld/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/研究：快排/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -644,7 +646,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/15/new-HelloWorld/" itemprop="url">new HelloWorld</a></h1>
+                <a class="post-title-link" href="/2019/09/15/研究：快排/" itemprop="url">研究：快排</a></h1>
         
 
         <div class="post-meta">
@@ -656,8 +658,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T12:31:33+08:00">
-                2018-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T14:57:22+08:00">
+                2019-09-15
               </time>
             
 
@@ -696,7 +698,739 @@
       
         
           
-            <h3 id="要输出了-要不人就废了"><a href="#要输出了-要不人就废了" class="headerlink" title="要输出了 要不人就废了"></a>要输出了 要不人就废了</h3><p>最近在知乎上看到一句话 大概的意思就是现在人的输入远远比输出大 而且真正有用的往往也是自己的输出，之后没多久又无意的在网上看到了相同观点blog。所以我觉得自己也应该努力一下 挣扎一下 输出点啥东西 即使是输出的东西很可能是屎一样的东西 但是我是不希望自己连屎都拉不出就被憋死 so here I am</p>
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/研究：把字符串转换为整数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/研究：把字符串转换为整数/" itemprop="url">研究：把字符串转换为整数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T17:21:53+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂Java四大引用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/能不能搞懂Java四大引用/" itemprop="url">能不能搞懂Java四大引用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T21:07:01+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>所谓强应用（我觉得就是正常引用吧）<br>软引用：SoftReference<br>弱引用：Weakreference<br>虚引用：PhantomReference</p>
+<p>SoftReference和WeakReference可以选择是否放入ReferenceQueue(用作回收前的清理工具)；PhantomReference则依赖与ReferenceQueue</p>
+<p>参考连接：<br>1：<a href="http://www.jiangjun.name/thinking-in-java/chapter17" target="_blank" rel="noopener">http://www.jiangjun.name/thinking-in-java/chapter17</a><br>2: <a href="https://blog.csdn.net/u013263323/article/details/47361151" target="_blank" rel="noopener">https://blog.csdn.net/u013263323/article/details/47361151</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂finalize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/能不能搞懂finalize/" itemprop="url">能不能搞懂finalize</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T20:58:11+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>跟垃圾回收有关 但绝不是用来处理垃圾回收的方法；具体应该是不太常用到的方法吧</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂finally/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/能不能搞懂finally/" itemprop="url">能不能搞懂finally</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T20:19:05+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用finally进行清理：<br>因为finally里的代码总会执行；</p>
+<p>finally实际用途<br>想将除内存外的资源恢复到初始状态，一般为打开的文件、已连接的网络、（已连接的数据库应该也是不含到网络里吧）、或者某个外部设备；</p>
+<p>在return中试用finally:<br>这样做可以使得方法从多点返回后，重要的清理工作仍会被执行；</p>
+<p>缺点：<br>会导致异常的遗失；<br>原因：java的异常实现的瑕疵；<br>避免方法：把要抛异常的方法都放到try-catch语句里，不要放到finally里。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂final/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/能不能搞懂final/" itemprop="url">能不能搞懂final</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T20:18:55+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>字面的意思就是不可以再被改变；<br>通常想要这样做的原因或者出发点有两个：1.设计、2.效率</p>
+<p>final修饰变量：<br>编译时的常量；<br>运行时初始化后就不再改变的变量；<br>修饰基本类型时是表示值不再变化；<br>修饰对象时时表示引用不再变化，数组也是如此；<br>修饰参数：<br>无法在方法中更改参数引用所指向的对象，通常用来向匿名内部类传递数据</p>
+<p>final修饰方法：<br>不希望被继承类覆盖；<br>效率：用内嵌代码块去替代正常的方法调用，但是不见得会提高效率，已经不建议这样试用；<br>private方法隐式指定为final；</p>
+<p>final修饰类：<br>该类用不需要改变或者安全考虑不希望它有子类；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/能不能搞懂HashMap、HashTable、CurrentHashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大大粒云吞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/能不能搞懂HashMap、HashTable、CurrentHashMap/" itemprop="url">能不能搞懂HashMap、HashTable、CurrentHashMap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T18:25:47+08:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>（这些认知不一定是全对的，完全是为了检视自己的学习情况）<br>先放上我自己看完网上个种文章还有阅读了《Thinking in Java》之后的认知：</p>
+<p>HashMap：底层是由数组加链表实现，数组是HashMap的桶 这个桶里存放着的是元素的key；<br>它允许key为null，也允许value为null，所有在检索一个key是否存在时，不能使用get()获取到是null来作为判断条件，应该使用的是containsKey()来判断；然后它是非线程安全的；如果要让它支持多线程，可以用Collections.synchronizedMap来包裹容器，这个方法的具体原来就是将原本HashMap的各种方法前都加上 synchronized 关键字来个方法上锁，这种做法都是对整个资源上锁所以效率很低。</p>
+<p>HashTable: 底层也是数组和链表，它就是HashMap的线程安全的版本，但是已经被弃用，具体做到线程安全的原因也是因为自身内部就想像上述Collections.synchronizedMap的做法一样对所有的方法都加上synchronized;然后它不允许key和value为空;</p>
+<p>CurrentHashMap: 最后的是在多线程的情况下的好的选择，因为默认情况下它将自身内部的存储结构分为了16块，所以可以支持16线程同时操作这些数据段（Segment），大大提升了效率。</p>
+<p>上述是我的自己理解和记忆；</p>
+<p>下面的开始结合网上的文章再梳理一遍，保证正确性：</p>
+<p>参考文章链接：<br>1:<a href="https://medium.com/@mr.anmolsehgal/hashtable-vs-hashmap-vs-concurrenthashmap-4aa0ff1eecc4" target="_blank" rel="noopener">https://medium.com/@mr.anmolsehgal/hashtable-vs-hashmap-vs-concurrenthashmap-4aa0ff1eecc4</a><br>2:<a href="http://www.yuanrengu.com/index.php/2017-01-17.html" target="_blank" rel="noopener">http://www.yuanrengu.com/index.php/2017-01-17.html</a><br>3: <a href="https://blog.csdn.net/justloveyou_/article/details/62893086" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/62893086</a><br>4: <a href="https://dzone.com/articles/java-7-hashmap-vs" target="_blank" rel="noopener">https://dzone.com/articles/java-7-hashmap-vs</a><br>5: <a href="https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/" target="_blank" rel="noopener">https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/</a></p>
 
           
         
@@ -735,6 +1469,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -778,7 +1516,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
